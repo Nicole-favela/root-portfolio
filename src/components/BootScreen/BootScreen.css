@@ -1,0 +1,85 @@
+.boot {
+  width: 100%;
+  height: 100%;
+  background: var(--kali-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease;
+}
+
+.boot__logo {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.boot__dragon {
+  color: var(--kali-purple);
+  font-size: clamp(0.45rem, 1.1vw, 0.72rem);
+  line-height: 1.2;
+  white-space: pre;
+  text-shadow: 0 0 18px var(--kali-purple);
+  animation: fadeIn 1s ease;
+}
+
+.boot__kali-label {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--kali-text-dim);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+}
+
+.boot__log {
+  width: min(700px, 90vw);
+  max-height: 45vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: 2rem;
+}
+
+.boot__line {
+  font-size: clamp(0.65rem, 1.2vw, 0.78rem);
+  color: var(--kali-text-dim);
+  animation: slideUp 0.15s ease both;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.boot__line .ok   { color: var(--kali-green); font-weight: 700; margin-right: 0.5rem; }
+.boot__line .fail { color: #ff4444;           font-weight: 700; margin-right: 0.5rem; }
+.boot__line .warn { color: #ffaa00;                             margin-right: 0.5rem; }
+
+.boot__progress-wrap {
+  width: min(700px, 90vw);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.boot__progress-label {
+  font-size: 0.7rem;
+  color: var(--kali-text-dim);
+  display: flex;
+  justify-content: space-between;
+}
+
+.boot__progress-bar {
+  height: 3px;
+  background: var(--kali-surface2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.boot__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--kali-purple-dim), var(--kali-purple), var(--kali-pink));
+  border-radius: 2px;
+  transition: width 0.12s linear;
+  box-shadow: 0 0 8px var(--kali-purple);
+}

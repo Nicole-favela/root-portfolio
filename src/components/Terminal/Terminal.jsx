@@ -72,10 +72,50 @@ function Prompt() {
 export default function Terminal({ onComplete }) {
     const [lines, setLines] = useState([])
     const [input, setInput] = useState('')
+    const [history, setHistory] = useState([])
+    const [histIdx, setHistIdx] = useState(-1)
     const [locked, setLocked] = useState(false)
 
     const bodyRef = useRef(null)
     const inputRef = useRef(null)
+    function appendLines(newLines, callback){
+        setLines(prev => [
+            ...prev,
+            {type: 'prompt', cmd: input},
+            ...newLines,
+        ])
+        if (callback){
+            setTimeout(callback, newLines.length * 80 + 200)
+        }
+    }
+    function handleCommand(cmd){
+        const trimmed_cmd = cmd.trim().toLowerCase()
+        setHistory(prev => [cmd, ...prev])
+        setHistIdx(-1)
+        if (trimmed_cmd === 'clear'){
+            setLines([])
+            setInput('')
+            return
+        }
+
+        if (trimmed_cmd === 'whoami'){
+            appendLines([{type: 'output', text: USER}])
+
+        }
+        else if (trimmed_cmd === 'ls'){
+            appendLines(LS_OUTPUT)
+        }
+        else if (trimmed_cmd === 'cat bio' || trimmed_cmd === 'cat bio.txt') {
+            appendLines(BIO_OUTPUT)
+        }
+        else if (trimmed_cmd === 'startx') {
+            setLocked(true)
+            appendLines(STARTX_OUTPUT, () => onComplete())
+        }
+        else {
+            appendLines([{type: 'error', text: `Command not found: ${cmd} - try 'help` }])
+        }
+    }
 
     function handleKey(e) {
         if (e.key === 'Enter'){
@@ -102,7 +142,7 @@ export default function Terminal({ onComplete }) {
                 <span className="term__dot term__dot--close" />
                 <span className="term__dot term__dot--min" />
                 <span className="term__dot term__dot--max" />
-                <span className="term__title">{USER}@{HOST}: {PATH}</span>
+                <span className="term__title">{USER}s_portfolio@{HOST}: {PATH}</span>
                 </div>
             <div className="term__body" >
                 {lines.map((line, i) => 

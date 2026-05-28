@@ -30,3 +30,77 @@
   gap: 8px;
   flex-shrink: 0;
 }
+.term__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: default;
+}
+/* for realistic mac window */
+.term__dot--close { background: #ff5f57; }
+.term__dot--min   { background: #ffbd2e; }
+.term__dot--max   { background: #28c941; }
+
+.term__title {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.72rem;
+  color: var(--kali-text-dim);
+  letter-spacing: 0.05em;
+}
+.term__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.term__line {
+  font-size: clamp(0.72rem, 1.3vw, 0.85rem);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.term__line--prompt .prompt-user  { color: var(--kali-green);    font-weight: 700; }
+.term__line--prompt .prompt-at    { color: var(--kali-text-dim); }
+.term__line--prompt .prompt-host  { color: var(--kali-purple);   font-weight: 700; }
+.term__line--prompt .prompt-colon { color: var(--kali-text-dim); }
+.term__line--prompt .prompt-path  { color: var(--kali-cyan);     }
+.term__line--prompt .prompt-sym   { color: var(--kali-text-dim); }
+.term__line--prompt .prompt-cmd   { color: var(--kali-white);    margin-left: 0.4rem; }
+.term__line--output  { color: var(--kali-text-dim); }
+.term__line--accent  { color: var(--kali-purple);   }
+.term__line--success { color: var(--kali-green);    }
+.term__line--pink    { color: var(--kali-pink);     }
+.term__line--cyan    { color: var(--kali-cyan);     }
+.term__input-row {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem 1rem;
+  flex-shrink: 0;
+  border-top: 1px solid var(--kali-surface2);
+}
+.term__prompt-prefix {
+  font-size: 0.85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.term__prompt-prefix .prompt-user  { color: var(--kali-green);    font-weight: 700; }
+.term__prompt-prefix .prompt-at    { color: var(--kali-text-dim); }
+.term__prompt-prefix .prompt-host  { color: var(--kali-purple);   font-weight: 700; }
+.term__prompt-prefix .prompt-colon { color: var(--kali-text-dim); }
+.term__prompt-prefix .prompt-path  { color: var(--kali-cyan);     }
+.term__prompt-prefix .prompt-sym   { color: var(--kali-text-dim); }
+
+.term__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--kali-white);
+  caret-color: var(--kali-purple);
+  margin-left: 0.4rem;
+}

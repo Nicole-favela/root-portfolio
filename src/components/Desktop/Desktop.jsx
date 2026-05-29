@@ -33,6 +33,7 @@ export default function Desktop() {
   return (
     <div className="desktop">
       <div className="desktop__grid" aria-hidden="true" />
+        <div className="desktop__overlay" aria-hidden="true" /> 
 
       <div className="desktop__watermark" aria-hidden="true">
         <span>KALI</span>

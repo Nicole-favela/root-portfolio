@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Window from '../Window/Window.jsx'
-// import Taskbar from '../Taskbar/Taskbar.jsx'
+import Taskbar from '../Taskbar/Taskbar.jsx'
 import { DESKTOP_ICONS } from '../../data/data.js'
 import { Bio, Skills, Projects, Achievements, Contact, Resume } from '../apps/apps.jsx'
 import './Desktop.css'
@@ -14,6 +14,7 @@ const WINDOW_SIZES = {
   Achievements: { width: 480, height: 380 },
   Contact:      { width: 460, height: 320 },
   Resume:       { width: 420, height: 280 },
+  Photos:       { width: 800, height: 600 },
 }
 
 export default function Desktop() {
@@ -71,10 +72,10 @@ export default function Desktop() {
         )
       })}
 
-      {/* <Taskbar
+      <Taskbar
         openApps={openWindows}
         onAppClick={(id) => {}}
-      /> */}
+      />
 
       {openWindows.length === 0 && (
         <div className="desktop__hint">double-click an icon to open</div>

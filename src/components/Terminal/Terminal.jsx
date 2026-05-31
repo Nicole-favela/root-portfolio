@@ -7,8 +7,9 @@ const PATH = '~'
 
 const MOTD = [
   { type: 'accent',  text: '┌──────────────────────────────────────────────────────────┐' },
-  { type: 'accent',  text: '│                  Kali GNU/Linux Rolling                   │' },
-  { type: 'accent',  text: '│                     Welcome!                              │' },
+  { type: 'accent',  text: '│                  Kali GNU/Linux Rolling                  │' },
+  { type: 'accent',  text: '│                 Welcome To My Portfolio!                 │' },
+  { type: 'accent', text:   '│                 Type HELP to see available commands      │' },
   { type: 'accent',  text: '└──────────────────────────────────────────────────────────┘' },
   { type: 'output',  text: '' },
   { type: 'output',  text: `Last login: ${new Date().toDateString()} from 127.0.0.1` },
@@ -57,6 +58,7 @@ const STARTX_OUTPUT = [
 function Prompt() {
   return (
     <span>
+       
       <span className="prompt-user">{USER}</span>
       <span className="prompt-at">@</span>
       <span className="prompt-host">{HOST}</span>
@@ -66,6 +68,21 @@ function Prompt() {
     </span>
   )
 }
+
+function Info() {
+  return (
+    <span>
+       
+      <span className="prompt-user">Welcome to My Porfolio</span>
+      <span className="prompt-at">Type startx to launch desktop and view projects</span>
+      <span className="prompt-host">{HOST}</span>
+      <span className="prompt-colon">:</span>
+      <span className="prompt-path">{PATH}</span>
+      <span className="prompt-sym">$ </span>
+    </span>
+  )
+}
+
 
 
 
@@ -78,6 +95,10 @@ export default function Terminal({ onComplete }) {
 
     const bodyRef = useRef(null)
     const inputRef = useRef(null)
+    useEffect(() => {
+        setLines(MOTD)
+    }, [])
+
     function appendLines(newLines, callback){
         setLines(prev => [
             ...prev,
@@ -112,9 +133,16 @@ export default function Terminal({ onComplete }) {
             setLocked(true)
             appendLines(STARTX_OUTPUT, () => onComplete())
         }
+        else if (trimmed_cmd === 'help') {
+            appendLines(HELP_TEXT)
+        }
+         else if (trimmed === '') {
+            setLines(prev => [...prev, { type: 'prompt', cmd: '' }])
+         }
         else {
             appendLines([{type: 'error', text: `Command not found: ${cmd} - try 'help` }])
         }
+        setInput('')
     }
 
     function handleKey(e) {
@@ -145,9 +173,12 @@ export default function Terminal({ onComplete }) {
                 <span className="term__title">{USER}s_portfolio@{HOST}: {PATH}</span>
                 </div>
             <div className="term__body" >
+                {/* <Info/> */}
+               
                 {lines.map((line, i) => 
-                  line.type == 'prompt' ? (
+                  line.type === 'prompt' ? (
                     <div key={i} className='term__line term_line--prompt'>
+                        
                         <Prompt />
                         <span className='prompt-cmd'>{line.cmd}</span>
                     </div>

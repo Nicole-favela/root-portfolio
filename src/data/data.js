@@ -35,7 +35,7 @@ export const PROJECTS = [
   {
     id: '2',
     name: 'Self-RAG Research Project',
-    description: 'Another project — highlight the problem it solves or the impact it had.',
+    description: 'Another project',
     tech: ['Python', 'FastAPI', 'Docker'],
     github: 'https://github.com/yourusername/project-beta',
     demo: null,
@@ -65,4 +65,5 @@ export const DESKTOP_ICONS = [
   { id: 'resume',       label: 'resume.pdf', icon: '📋', app: 'Resume'       },
   { id: 'achievements', label: 'awards.txt', icon: '🏆', app: 'Achievements' },
   { id: 'contact',      label: 'contact.sh', icon: '✉️',  app: 'Contact'      },
+  { id: 'photos',      label: 'photos/', icon: '🖼️',  app: 'Photos'      },
 ]

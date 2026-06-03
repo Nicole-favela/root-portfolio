@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Taskbar.css'
 
-export default function Taskbar({ openApps, onAppClick }) {
+export default function Taskbar({ openApps, onAppClick, onAppBottomIconClick }) {
   const [time, setTime] = useState('')
   const [date, setDate] = useState('')
 
@@ -21,7 +21,9 @@ export default function Taskbar({ openApps, onAppClick }) {
       <div className="taskbar__left">
         <button className="taskbar__menu-btn" title="Applications">
           <span className="taskbar__kali-logo">⬡</span>
-          <span>Applications</span>
+          <span className="taskbar__menu-link" onClick={onAppBottomIconClick}>
+            Applications
+          </span>
         </button>
       </div>
 

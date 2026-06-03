@@ -19,6 +19,12 @@ const WINDOW_SIZES = {
 
 export default function Desktop() {
   const [openWindows, setOpenWindows] = useState([])
+  const [page, setPage] = useState('desktop')
+
+  function handleAppClick() {
+    //set page to regular view
+    setPage('applications')
+  }
 
   function openApp(iconId) {
     const icon = DESKTOP_ICONS.find(i => i.id === iconId)
@@ -30,9 +36,33 @@ export default function Desktop() {
   function closeWindow(iconId) {
     setOpenWindows(prev => prev.filter(w => w.id !== iconId))
   }
+  function handleBackToDesktop() {
+    setPage('desktop')
+  }
 
   return (
     <div className="desktop">
+        {page === 'applications' ? (
+        <div className="applications-view">
+          <button className="applications-back" onClick={handleBackToDesktop}>
+            ← Back to desktop
+          </button>
+          <h1>Applications</h1>
+          <div className="applications-grid">
+            {DESKTOP_ICONS.map(icon => (
+              <button
+                key={icon.id}
+                className="applications-item"
+                onClick={() => openApp(icon.id)}
+              >
+                <span>{icon.icon}</span>
+                <span>{icon.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : (
+    <>
       <div className="desktop__grid" aria-hidden="true" />
         <div className="desktop__overlay" aria-hidden="true" /> 
 
@@ -71,15 +101,19 @@ export default function Desktop() {
           </Window>
         )
       })}
+       {openWindows.length === 0 && (
+        <div className="desktop__hint">double-click an icon to open</div>
+      )}
+      </>
+    )}
 
       <Taskbar
         openApps={openWindows}
         onAppClick={(id) => {}}
+        onAppBottomIconClick={handleAppClick}
       />
 
-      {openWindows.length === 0 && (
-        <div className="desktop__hint">double-click an icon to open</div>
-      )}
+     
     </div>
   )
 }

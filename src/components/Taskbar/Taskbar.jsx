@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Taskbar.css'
 
-export default function Taskbar({ openApps, onAppClick, onAppBottomIconClick }) {
+export default function Taskbar({ openApps, onAppClick, onAppBottomIconClick, activeView }) {
   const [time, setTime] = useState('')
   const [date, setDate] = useState('')
 

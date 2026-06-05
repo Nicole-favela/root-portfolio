@@ -27,28 +27,34 @@ export const PROJECTS = [
     id: '1',
     name: 'Caldera CLI Agent',
     description: 'An AI powered red team assistant using MITRE CALDERA that allows for automated execution, monitoring, reporting, and analysis of red team operations through a CLI.',
+    motivation: 'This was born out of a desire to make red team operations more efficient and accessible, and to explore the intersection of AI and cybersecurity.',
     tech: ['Python', 'MITRE CALDERA API', 'Llama 3.1'],
     github: 'https://github.com/',
     demo: 'https://project-alpha.vercel.app',
     status: 'live',
+    img: null
   },
   {
     id: '2',
     name: 'Self-RAG Research Project',
     description: 'Another project',
+    motivation: 'This project was motivated by a desire to explore the capabilities of Retrieval Augmented Generation (RAG) and the possible improvements that could make responses more accurate and contextually relevant.',
     tech: ['Python', 'FastAPI', 'Docker'],
     github: 'https://github.com/yourusername/project-beta',
     demo: null,
     status: 'live',
+    img: null
   },
   {
     id: '3',
     name: 'Pong Playing Atari Reinforcement Learning Agent',
     description: 'A reinforcement learning trained agent to play pong using Atari in gymnasium.',
+    motivation: 'This project was motivated by the desire to apply reinforcement learning and specifically Q-learning to classic atari games to explore the capabilities and limitations.',
     tech: ['Pytorch', 'Q-learning', 'Matplotlib', 'Gymnasium'],
     github: 'https://github.com/',
     demo: null,
     status: 'live',
+    img: null
   },
 ]
 

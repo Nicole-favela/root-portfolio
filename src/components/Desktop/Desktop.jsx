@@ -4,6 +4,7 @@ import Taskbar from '../Taskbar/Taskbar.jsx'
 import { DESKTOP_ICONS } from '../../data/data.js'
 import { Bio, Skills, Projects, Achievements, Contact, Resume } from '../apps/apps.jsx'
 import './Desktop.css'
+import AboutView from '../AboutView/AboutView.jsx'
 
 const APP_MAP = { Bio, Skills, Projects, Achievements, Contact, Resume }
 
@@ -42,25 +43,10 @@ export default function Desktop() {
 
   return (
     <div className="desktop">
+      {/* TODO: ADD BUTTON TO GO BACK TO REGULAR DESKTOP VIEW */}
         {page === 'applications' ? (
-        <div className="applications-view">
-          <button className="applications-back" onClick={handleBackToDesktop}>
-            ← Back to desktop
-          </button>
-          <h1>Applications</h1>
-          <div className="applications-grid">
-            {DESKTOP_ICONS.map(icon => (
-              <button
-                key={icon.id}
-                className="applications-item"
-                onClick={() => openApp(icon.id)}
-              >
-                <span>{icon.icon}</span>
-                <span>{icon.label}</span>
-              </button>
-            ))}
-          </div>
-        </div>
+       
+        <AboutView photoSrc={null} />
       ) : (
     <>
       <div className="desktop__grid" aria-hidden="true" />
@@ -111,6 +97,7 @@ export default function Desktop() {
         openApps={openWindows}
         onAppClick={(id) => {}}
         onAppBottomIconClick={handleAppClick}
+        // activeView = {view}
       />
 
      

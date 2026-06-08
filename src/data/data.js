@@ -11,7 +11,9 @@ Previously, I served as Lead Software Engineer at Series, where I helped scale a
 
 I’m especially passionate about full-stack engineering, software engineering, AI engineering, backend development, and applied machine learning, and I’m motivated by opportunities to build impactful products that solve meaningful problems.
 
-I’m currently seeking new opportunities in full-stack engineering, software engineering, and AI engineering, where I can continue learning, building, and contributing to innovative teams and products.`
+I’m currently seeking new opportunities in full-stack engineering, software engineering, and AI engineering, where I can continue learning, building, and contributing to innovative teams and products.`,
+  short_about: `I'm currently working at a start-up that intersects mental health and technology. I'm also a recent graduate from the University of Texas at El Paso. What motivates me is the opportunity to make a positive impact through technology. `,
+  
 }
 
 export const SKILLS = {

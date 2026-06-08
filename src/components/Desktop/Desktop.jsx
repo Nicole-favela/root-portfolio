@@ -23,8 +23,8 @@ export default function Desktop() {
   const [page, setPage] = useState('desktop')
 
   function handleAppClick() {
-    //set page to regular view
-    setPage('applications')
+    //set page to regular view ()
+    setPage(v => v === 'desktop' ? 'applications' : 'desktop')
   }
 
   function openApp(iconId) {
@@ -97,7 +97,7 @@ export default function Desktop() {
         openApps={openWindows}
         onAppClick={(id) => {}}
         onAppBottomIconClick={handleAppClick}
-        // activeView = {view}
+        activeView = {page}
       />
 
      

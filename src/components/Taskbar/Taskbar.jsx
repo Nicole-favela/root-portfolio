@@ -19,12 +19,12 @@ export default function Taskbar({ openApps, onAppClick, onAppBottomIconClick, ac
   return (
     <div className="taskbar">
       <div className="taskbar__left">
-        <button className="taskbar__menu-btn" title="Applications">
-          <span className="taskbar__kali-logo">⬡</span>
-          <span className="taskbar__menu-link" onClick={onAppBottomIconClick}>
-            Applications
-          </span>
-        </button>
+        
+          <button className="taskbar__menu-btn"  onClick={onAppBottomIconClick} title="Toggle view">
+            <span className="taskbar__kali-logo">⬡</span>
+            <span> {activeView === 'applications' ? 'Desktop' : 'Applications'}</span>
+          </button>
+       
       </div>
 
       <div className="taskbar__center">

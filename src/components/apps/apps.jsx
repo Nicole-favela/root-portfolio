@@ -137,29 +137,29 @@ export function Contact() {
 
 export function Resume() {
   return (
-    <div>Resume section</div>
-    // <div>
-    //   <h2>$ open resume.pdf</h2>
-    //   <p style={{ marginBottom: '1rem', color: 'var(--kali-text-dim)' }}>
-    //     Host your resume somewhere and update the link below.
-    //   </p>
-      
-    //     href="https://your-resume-url.com"
-    //     target="_blank"
-    //     rel="noreferrer"
-    //     style={{
-    //       display: 'inline-block',
-    //       padding: '8px 20px',
-    //       background: 'rgba(160,32,240,0.15)',
-    //       border: '1px solid var(--kali-purple-dim)',
-    //       borderRadius: '5px',
-    //       color: 'var(--kali-purple)',
-    //       fontSize: '0.8rem',
-    //       textDecoration: 'none',
-    //     }}
-    //   >
-    //     ↓ Download Resume
-    //   </a>
-    // </div>
+    <div className="resume">
+      <h2>$ open resume.pdf</h2>
+      <p style={{ marginBottom: '1rem', color: 'var(--kali-text-dim)' }}>
+        View and download my resume at the dropbox link below
+      </p>
+
+      <a
+        href="https://www.dropbox.com/scl/fo/eep3zeycha11h554og8ic/ALyoCN80iKOjg27SZUFuhn8?rlkey=uedtvtd69t34s7k834k3gi0pe&st=ify05ck7&dl=0"
+        target="_blank"
+        rel="noreferrer"
+        style={{
+          display: 'inline-block',
+          padding: '8px 20px',
+          background: 'rgba(160,32,240,0.15)',
+          border: '1px solid var(--kali-purple-dim)',
+          borderRadius: '5px',
+          color: 'var(--kali-purple)',
+          fontSize: '0.8rem',
+          textDecoration: 'none',
+        }}
+      >
+        View Resume
+      </a>
+    </div>
   )
 }

@@ -1,5 +1,5 @@
 export const USER_INFO = {
-  name:     'Nicole',
+  name:     'Nicole, MS',
   role:     'Full Stack Engineer',
   location: 'El Paso , TX',
   
@@ -12,16 +12,19 @@ Previously, I served as Lead Software Engineer at Series, where I helped scale a
 I’m especially passionate about full-stack engineering, software engineering, AI engineering, backend development, and applied machine learning, and I’m motivated by opportunities to build impactful products that solve meaningful problems.
 
 I’m currently seeking new opportunities in full-stack engineering, software engineering, and AI engineering, where I can continue learning, building, and contributing to innovative teams and products.`,
-  short_about: `I'm currently working at a start-up that intersects mental health and technology. I'm also a recent graduate from the University of Texas at El Paso. What motivates me is the opportunity to make a positive impact through technology. `,
+  short_about: `I believe the best engineers never stop learning. As a recent M.S. Computer Science graduate and software engineer working in the AI and mental health space, I'm constantly exploring new technologies, solving challenging problems, and looking for opportunities to build products that improve people's lives.
+
+  Outside of work, I'm driven by curiosity and a love of learning. I've always been fascinated by mathematics, emerging technologies, and the ways AI can augment human potential. When I'm not coding, you'll likely find me listening to music (Evanescence and Bad Omens are my some of my top picks), watching movies, or diving into a new technical rabbit hole just for the fun of learning something new.`
   
 }
 
 export const SKILLS = {
   Languages:  ['Python', 'JavaScript', 'Java', 'TypeScript', 'SQL'],
-  Frontend:   ['React', 'Next.js', 'Tailwind CSS', 'MUI'],
-  Backend:    ['Node.js', 'FastAPI', 'Flask','Google Cloud Firestore','PostgreSQL', 'MongoDB', 'Pinecone', 'Pgvector'],
-  DevOps:     ['Docker', 'AWS'],
-  Security:   ['Burp Suite', 'Wireshark', 'Metasploit', 'nmap'],
+  Frontend:   ['React', 'Next.js', 'MUI'],
+  Backend:    ['Node.js', 'Next.js', 'FastAPI', 'Flask','Google Cloud Firestore','PostgreSQL', 'MongoDB', 'Pinecone', 'Pgvector'],
+  DevOps:     ['GCP', 'AWS'],
+  Security:   ['Wireshark', 'Metasploit', 'nmap', 'CORE', 'Kali Linux', 'John the Ripper'],
+  Tools:      ['Git', 'Jira', 'Trello', 'VS Code', 'Postman', 'Cursor', 'n8n']
 }
 
 export const PROJECTS = [

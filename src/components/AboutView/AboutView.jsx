@@ -10,7 +10,7 @@ const ROLES = [
   'Ex-CTO',
   
 ]
-const TOP_STACK = ['React', 'Python',  'AWS', 'PostgreSQL', 'TypeScript', 'Linux', 'Node JS', 'FASTAPI']
+const TOP_STACK = ['React', 'Python',  'AWS', 'GCP','PostgreSQL', 'TypeScript', 'Linux', 'Node JS', 'FASTAPI', 'Pinecone']
 
 const ACTIVITY = [
   { text: 'da2f821 (HEAD -> main, origin/main) update portfolio with recent wins', time: '2m ago' },
@@ -156,10 +156,10 @@ export default function AboutView({ photoSrc }) {
         {/* About / mission */}
         <div className="about__card">
           <p className="about__card-title">
-            <span>$ </span>cat mission.txt
+            <span>$ </span>cat about.txt
           </p>
           <p className="about__mission">
-            {USER_INFO.bio.split('\n').map((line, i) => (
+            {USER_INFO.short_about.split('\n').map((line, i) => (
               <span key={i}>
                 {line.split(/(elegant|clean|reliable|design|engineering)/gi).map((part, j) =>
                   /elegant|clean|reliable|design|engineering/i.test(part)
